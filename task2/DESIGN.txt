@@ -1,0 +1,11 @@
+I chose EVP_aes_256_gcm as my encryption algorithm mostly because it AES 256 is named to be one of the more "secure" types of encryption,
+ and also because it is authenticated, which was part of the project description. 
+
+in my output when encrypting:
+<256bytes encrypted AES key>||<16 bytes iv>||<16 bytes tag>||< rest of bytes of aes encryp text> 
+
+I chose the design to be this way because it would facilitate the things I needed to retrieve to decrypt
+256 bytes read would help me do the decryption using the private key, which would get me the aes key for decryption
+16 bytes of iv also used for decryption
+16 bytes TAG for authentication 
+x num of bytes to decrypt to get the message. 

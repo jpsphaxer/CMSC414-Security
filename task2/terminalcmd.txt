@@ -1,0 +1,3 @@
+gcc -Wall hybridEncrypt.c  -o hybridEncrypt -lcrypto -lssl
+./hybridEncrypt e public_key.pem text.txt > cipher.bin
+./hybridEncrypt d private_key.pem cipher.bin
